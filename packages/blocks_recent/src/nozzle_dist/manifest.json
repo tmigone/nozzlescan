@@ -1,0 +1,141 @@
+{
+    "kind": "manifest",
+    "name": "blocks_recent",
+    "version": "0.1.0",
+    "dependencies": {
+        "eth_rpc": {
+            "owner": "graphprotocol",
+            "name": "eth_rpc",
+            "version": "0.1.0"
+        }
+    },
+    "tables": {
+        "blocks": {
+            "input": {
+                "sql": "select * from eth_rpc.blocks where block_num > 20000000"
+            },
+            "schema": {
+                "arrow": {
+                    "fields": [
+                        {
+                            "name": "block_num",
+                            "type": "UInt64",
+                            "nullable": false
+                        },
+                        {
+                            "name": "timestamp",
+                            "type": {
+                                "Timestamp": [
+                                    "Nanosecond",
+                                    "+00:00"
+                                ]
+                            },
+                            "nullable": false
+                        },
+                        {
+                            "name": "hash",
+                            "type": {
+                                "FixedSizeBinary": 32
+                            },
+                            "nullable": false
+                        },
+                        {
+                            "name": "parent_hash",
+                            "type": {
+                                "FixedSizeBinary": 32
+                            },
+                            "nullable": false
+                        },
+                        {
+                            "name": "ommers_hash",
+                            "type": {
+                                "FixedSizeBinary": 32
+                            },
+                            "nullable": false
+                        },
+                        {
+                            "name": "miner",
+                            "type": {
+                                "FixedSizeBinary": 20
+                            },
+                            "nullable": false
+                        },
+                        {
+                            "name": "state_root",
+                            "type": {
+                                "FixedSizeBinary": 32
+                            },
+                            "nullable": false
+                        },
+                        {
+                            "name": "transactions_root",
+                            "type": {
+                                "FixedSizeBinary": 32
+                            },
+                            "nullable": false
+                        },
+                        {
+                            "name": "receipt_root",
+                            "type": {
+                                "FixedSizeBinary": 32
+                            },
+                            "nullable": false
+                        },
+                        {
+                            "name": "logs_bloom",
+                            "type": "Binary",
+                            "nullable": false
+                        },
+                        {
+                            "name": "difficulty",
+                            "type": {
+                                "Decimal128": [
+                                    38,
+                                    0
+                                ]
+                            },
+                            "nullable": false
+                        },
+                        {
+                            "name": "gas_limit",
+                            "type": "UInt64",
+                            "nullable": false
+                        },
+                        {
+                            "name": "gas_used",
+                            "type": "UInt64",
+                            "nullable": false
+                        },
+                        {
+                            "name": "extra_data",
+                            "type": "Binary",
+                            "nullable": false
+                        },
+                        {
+                            "name": "mix_hash",
+                            "type": {
+                                "FixedSizeBinary": 32
+                            },
+                            "nullable": false
+                        },
+                        {
+                            "name": "nonce",
+                            "type": "UInt64",
+                            "nullable": false
+                        },
+                        {
+                            "name": "base_fee_per_gas",
+                            "type": {
+                                "Decimal128": [
+                                    38,
+                                    0
+                                ]
+                            },
+                            "nullable": true
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

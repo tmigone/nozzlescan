@@ -1,9 +1,0 @@
-version: '3'
-services:
-  nozzle:
-    build: ./project-nozzle
-    environment:
-      NOZZLE_CONFIG: /config/nozzle.toml
-    volumes:
-      - ./config:/config
-    command: ["/bin/nozzle", "help", "--dataset", "eth_rpc"]

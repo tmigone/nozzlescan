@@ -1,4 +1,0 @@
-kind = "evm-rpc"
-name = "eth_rpc"
-provider = "rpc_eth.toml"
-network = "mainnet"
